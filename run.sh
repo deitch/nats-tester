@@ -24,9 +24,9 @@ runtests() {
 
   # sync mode
   for i in $(seq 1 5); do
-    go run examples/stan-bench/main.go -np 1 -ns 0 -n 1000000 -a sync.${i} >> $outdir/${name}-sync-publish &
+    go run examples/stan-bench/main.go -np 1 -ns 0 -n 1000000 sync.${i} >> $outdir/${name}-sync-publish &
     pubpid=$!
-    go run examples/stan-bench/main.go -np 0 -ns 1 -n 1000000 -a sync.${i} >> $outdir/${name}-sync-subscribe &
+    go run examples/stan-bench/main.go -np 0 -ns 1 -n 1000000 sync.${i} >> $outdir/${name}-sync-subscribe &
     subpid=$!
     wait $pubpid
     wait $subpid
