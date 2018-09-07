@@ -6,7 +6,7 @@ runtests() {
   local outdir="$2"
 
   # replace all / with . 
-  name=${name//\//.}
+  name=$(echo $name | sed 's#/#.#g' )
   # and do not start it with a .
   name=${name#.}
 
