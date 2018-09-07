@@ -5,6 +5,9 @@ runtests() {
   local name="$1"
   local outdir="$2"
 
+  echo "running tests for ${name}"
+  echo
+
   # replace all / with . 
   name=$(echo $name | sed 's#/#.#g' )
   # and do not start it with a .
