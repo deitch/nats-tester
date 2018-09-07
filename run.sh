@@ -48,6 +48,7 @@ go version >> $INFOFILE
 echo "go-nats-streaming $(git -C $GOPATH/src/github.com/nats-io/go-nats-streaming rev-parse --verify HEAD)" >> $INFOFILE
 echo "nats-streaming-server $(git -C $GOPATH/src/github.com/nats-io/nats-streaming-server rev-parse --verify HEAD)" >> $INFOFILE
 
+cd $GOPATH/src/github.com/nats-io/go-nats-streaming
 
 for i in $@; do
   if [ "$i" = "memory" ]; then
