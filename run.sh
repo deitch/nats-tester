@@ -39,7 +39,7 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 
-OUTDIR="output/$(date -u +%Y%m%d-%H%M%S)"
+OUTDIR="$PWD/output/$(date -u +%Y%m%d-%H%M%S)"
 INFOFILE=$OUTDIR/information
 mkdir -p $OUTDIR
 touch $INFOFILE
