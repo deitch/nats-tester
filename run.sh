@@ -12,6 +12,8 @@ runtests() {
   name=$(echo $name | sed 's#/#.#g' )
   # and do not start it with a .
   name=${name#.}
+  # or end it with a .
+  name=${name%.}
 
   mkdir -p $outdir
 
